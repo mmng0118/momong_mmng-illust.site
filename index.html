@@ -11,16 +11,42 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+  (function(d) {
+    var config = {
+      kitId: 'wcn7tbn',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
   </head>
   <body>
+    <!--1ページ目----------------------------------->
     <div class="firstview">
-      <!-- ハンバーガーメニュー -->
+      <div class="top_videos">
+        <video class="top_video1" autoplay muted loop playsinline>
+          <source src="videos/kuromu_video.mp4" type="video/mp4" />
+        </video>
+        <video class="top_video2" autoplay muted loop playsinline>
+          <source src="videos/uduki_video.mp4" type="video/mp4" />
+        </video>
+        <video class="top_video3" autoplay muted loop playsinline>
+          <source src="videos/original_video.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <!-- ハンバーガーメニュー 
       <button class="nav-mini">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
+    -->
       <!-- タイトル -->
       <header class="title">
         <div class="title__bar"></div>
@@ -32,30 +58,35 @@
 
       <!-- イラスト上 -->
       <div class="illust illust--top">
-        <img src="images/uduki.jpg" alt="" />
+        <img src="images/original.jpg" alt="" />
       </div>
 
       <!-- ナビゲーション -->
       <nav class="nav">
         <ul>
-          <li class="nav__item nav__item--active"><a href="#">TOP</a></li>
-          <li class="nav__item"><a href="#">WORKS</a></li>
-          <li class="nav__item"><a href="#">ABOUT</a></li>
-          <li class="nav__item"><a href="#">CONTACT</a></li>
+          <li class="nav__item"><a href="#">TOP</a></li>
+          <li class="nav__item"><a href="#works">WORKS</a></li>
+          <li class="nav__item"><a href="#about">ABOUT</a></li>
+          <li class="nav__item"><a href="#contact">CONTACT</a></li>
         </ul>
       </nav>
 
-      <!-- イラスト下（右側） -->
-      <div class="illust illust--bottom">
+      <!-- イラスト中（右側） -->
+      <div class="illust illust--middle">
         <img src="images/kuromu.jpg" alt="" />
+      </div>
+
+      <!-- イラスト下（左側） -->
+      <div class="illust illust--bottom">
+        <img src="images/uduki.jpg" alt="" />
       </div>
 
       <!-- ページ番号 -->
       <p class="page_number">01</p>
     </div>
 
-    <!--2ページ目-->
-    <div class="works">
+    <!--２ページ目----------------------------------->
+    <div id="works" class="works">
       <!--見出し-->
       <div class="headline">
         <div class="headline_bar"></div>
@@ -65,94 +96,98 @@
       <!--カードエリア-->
       <div class="cards">
         <div class="cards_upper">
-          <div class="card">
-            <img class="card-illust" src="images/kuromu.jpg" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
+          <div class="cards_track">
+            <div
+              class="card"
+              data-src="images/kuromu.jpg"
+              data-date="2026/6/5"
+              data-tags="#タイムラプス,#二次創作"
+            >
+              <img class="card-illust" src="images/kuromu.jpg" />
+              <div class="captions">
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img class="card-illust" src="images/uduki.jpg" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
+            <div
+              class="card"
+              data-src="images/uduki.jpg"
+              data-date="2026/6/5"
+              data-tags="#タイムラプス,#二次創作"
+            >
+              <img class="card-illust" src="images/uduki.jpg" />
+              <div class="captions">
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img class="card-illust" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
+            <div
+              class="card"
+              data-src="images/milan1.jpg"
+              data-date="2026/6/5"
+              data-tags="#タイムラプス,#二次創作"
+            >
+              <img class="card-illust" src="images/milan1.jpg" />
+              <div class="captions">
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img class="card-illust" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
-            </div>
-          </div>
-        </div>
-        <div class="cards_middle">
-          <div class="card">
-            <img class="card-illust" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img class="card-illust" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-illust" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-illust" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
+            <div
+              class="card"
+              data-src="images/kenmochi.jpg"
+              data-date="2026/6/5"
+              data-tags="#タイムラプス,#二次創作"
+            >
+              <img class="card-illust" src="images/kenmochi.jpg" />
+              <div class="captions">
+              </div>
             </div>
           </div>
         </div>
         <div class="cards_lower">
-          <div class="card">
-            <img class="card-illust" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
+          <div class="cards_track">
+            <div
+              class="card"
+              data-src="images/original.jpg"
+              data-date="2026/6/5"
+              data-tags="#タイムラプス,#二次創作"
+            >
+              <img class="card-illust" src="images/original.jpg" />
+              <div class="captions">
+              </div>
+            </div>
+
+            <div
+              class="card"
+              data-src="images/milan2.jpg"
+              data-date="2026/6/5"
+              data-tags="#タイムラプス,#二次創作"
+            >
+              <img class="card-illust" src="images/milan2.jpg" />
+              <div class="captions">
+              </div>
+            </div>
+            <div class="card"               
+            data-src="images/kagami.jpg"
+              data-date="2026/6/5"
+              data-tags="#タイムラプス,#二次創作"
+>
+              <img class="card-illust" src="images/kagami.jpg"/>
+              <div class="captions">
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-illust" />
+              <div class="captions">
+              </div>
             </div>
           </div>
-          <div class="card">
-            <img class="card-illust" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-illust" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-illust" />
-            <div class="captions">
-              <p class="caption">2026/5/6</p>
-              <p class="caption">#二次創作</p>
-            </div>
+        </div>
+      </div>
+      <!-- モーダル -->
+      <div class="modal" id="modal">
+        <div class="modal_inner">
+          <button class="modal_close" id="modalClose">✕</button>
+          <div class="modal_content">
+            <img class="modal_img" id="modalImg" src="" alt="" />
+            <p class="modal_date" id="modalDate"></p>
+            <p class="modal_desc" id="modalDesc"></p>
+            <div class="modal_tags" id="modalTags"></div>
           </div>
         </div>
       </div>
@@ -160,54 +195,213 @@
       <p class="page_number">02</p>
     </div>
 
-    <!--３ページ目-->
-    <div class="about">
+    <!--３ページ目 Me-------------------------------------------------------------------->
+    <div id="about" class="about about_me">
       <div class="paper_content">
         <!--見出し-->
         <div class="headline">
           <div class="headline_bar"></div>
           <p class="headline_text">ABOUT</p>
         </div>
-        <div class="about_toggle">
-          <button class="me_choice choice--active">ME</button>
-          <button class="works_choice">WORKS</button>
+        <!--トグル------------------------------------------------------------------------------>
+        <div class="toggle-me-works">
+          <div class="knob"></div>
+
+          <button class="meBtn">ME</button>
+          <button class="worksBtn">WORKS</button>
+        </div>        
+<!--質問コーナー-->
+        <div class="QA_container">
+          <div class="QAbox">
+            <button class="Qbox">
+              <span class="question"><span class="q_label">Q</span>　いつからイラストを描いているの？</span>
+              <span class="icon">＋</span>
+            </button>
+            <div class="Abox">
+              <span class="answer"
+                ><span class="a_label">A</span>
+                <span class="answer_text">小学生の頃からです。<br>デジタルイラストは高校生の頃から描き始めました。</span>
+              </span>
+            </div>
+          </div>
+          <div class="QAbox">
+            <button class="Qbox">
+              <span class="question"><span class="q_label">Q</span>　何を使って描いているの？</span>
+              <span class="icon">＋</span>
+            </button>
+            <div class="Abox">
+              <span class="answer"
+                ><span class="a_label">A</span>
+                <span class="answer_text">ibisPaintというアプリを使っています。透明水彩を使っていた時期もあります。</span>
+              
+            </div>
+          </div>
+          <div class="QAbox">
+            <button class="Qbox">
+              <span class="question"><span class="q_label">Q</span>　尊敬するイラストレーターは？</span>
+              <span class="icon">＋</span>
+            </button>
+            <div class="Abox">
+              <span class="answer"><span class="a_label">A</span>
+              <span class="answer_text">DSマイルさんのイラストが理想です！</span>
+            </div>
+          </div>
+          <div class="QAbox">
+            <button class="Qbox">
+              <span class="question"><span class="q_label">Q</span>　今後の目標は？</span>
+              <span class="icon">＋</span>
+            </button>
+            <div class="Abox">
+              <span class="answer"><span class="a_label">A</span>
+              <span class="answer_text">背景を書き込めるようになることです！</span>
+            </div>
+          </div>
         </div>
+      </div>
+      <p class="page_number">03</p>
+    </div>
+    <!--３ページ目 Works---------------------------->
+    <div class="about about_works">
+      <div class="paper_content">
+        <!--見出し-->
+        <div class="headline">
+          <div class="headline_bar"></div>
+          <p class="headline_text">ABOUT</p>
+        </div>
+        <!--トグル---------------------------------------------------------------------->
+          <div class="toggle-me-works">
+          <div class="knob"></div>
+
+          <button class="meBtn">ME</button>
+          <button class="worksBtn">WORKS</button>
+        </div>        
+
         <!--質問コーナー-->
         <div class="QA_container">
-          <button class="Qbox">
-            <span class="question">Q いつからイラストを描いているの？</span>
-            <span class="icon">＋</span>
-          </button>
-          <div class="Abox">
-            <span class="answer">小学生の頃から描いています。
-              <br>デジタルイラストは高校生の頃から描き始めました。
-            </span>
+          <div class="QAbox">
+            <button class="Qbox">
+              <span class="question"><span class="q_label">Q</span>　線画と色塗りどっちが好き？</span>
+              <span class="icon">＋</span>
+            </button>
+            <div class="Abox">
+              <span class="answer"
+                ><span class="a_label">A</span>
+                <span class="answer_text">色塗りの方が好きです！
+                <br />早く色を塗りたくて、線画が描けていないのに色を塗ってしまうことがよくあります。
+              </span>
+            </div>
           </div>
-
-          <button class="Qbox">
-            <span class="question">Q 何を使って描いているの？</span>
-            <span class="icon">＋</span>
-          </button>
-          <div class="Abox">
-            <span class="answer">ibisPaintというアプリを使っています。透明水彩を使っていた時期もあります。</span>
+          <div class="QAbox">
+            <button class="Qbox">
+              <span class="question"><span class="q_label">Q</span>　色塗りのこだわりはある？</span>
+              <span class="icon">＋</span>
+            </button>
+            <div class="Abox">
+              <span class="answer"
+                ><span class="a_label">A</span>
+                <span class="answer_text">できるだけ高彩度の色味で、真っ黒を使わないように意識しています。</span
+              >
+            </div>
           </div>
-
-          <button class="Qbox">
-            <span class="question">Q 尊敬するイラストレーターはいる？</span>
-            <span class="icon">＋</span>
-          </button>
-          <div class="Abox">
-            <span class="answer">DSマイルさんのイラストが理想です！</span>
+          <div class="QAbox">
+            <button class="Qbox">
+              <span class="question"><span class="q_label">Q</span>　何を描くことが得意？</span>
+              <span class="icon">＋</span>
+            </button>
+            <div class="Abox">
+              <span class="answer"
+                ><span class="a_label">A</span>
+                <span class="answer_text">男性キャラクターのイラストが得意です。
+                <br />また、髪の毛や金属を塗ることも得意な方です。
+              </span>
+            </div>
           </div>
-          <button class="Qbox">
-            <span class="question">Q 今後の目標は？</span>
-            <span class="icon">＋</span>
-          </button>
-          <div class="Abox">
-            <span class="answer">背景を書き込めるようになることです！</span>
+          <div class="QAbox">
+            <button class="Qbox">
+              <span class="question"><span class="q_label">Q</span>　イラスト制作で苦手なことは？</span>
+              <span class="icon">＋</span>
+            </button>
+            <div class="Abox">
+              <span class="answer"
+                ><span class="a_label">A</span> 
+                <span class="answer_text">女性キャラクターをあまり描かないため苦手です。
+                <br />また、たいてい上半身までしか枠に収まりきらないめ下半身は全く描けません！
+              </span>
+            </div>
+          </div>
+          <div class="QAbox">
+            <button class="Qbox">
+              <span class="question"><span class="q_label">Q</span>　昔のイラストは残ってる？</span>
+              <span class="icon">＋</span>
+            </button>
+            <div class="Abox">
+              <span class="answer"
+                ><span class="a_label">A</span>
+                <span class="answer_text">デジタルイラストを描き始めたばかりのころの作品が残っています。
+                <br />この頃は小さな絵を描くのに数時間かかっていました。
+              </span>
+            </div>
           </div>
         </div>
+      </div>
       <p class="page_number">03</p>
+    </div>
+    <!--canvasエリア-------------------------------->
+    <div class="footer">
+      <div class="canvas_container" id="canvasContainer">
+        <canvas id="jsCanvas" class="canvas"></canvas>
+
+        <div class="canvas_toggle">
+          <input type="checkbox" id="modeToggle" class="toggle_checkbox" />
+          <label for="modeToggle" class="toggle_label">
+            <span class="toggle_icon_left"
+              ><i class="fa-solid fa-pen"></i
+            ></span>
+            <span class="toggle_icon_right"
+              ><i class="fa-solid fa-eraser"></i
+            ></span>
+            <span class="toggle_button"></span>
+          </label>
+          <button class="undo_btn" id="undoBtn">
+            <i class="fa-solid fa-rotate-left"></i>
+          </button>
+        </div>
+      </div>
+
+      <!--contactフォーム----------------------------->
+      <div id="contact" class="contact">
+        <div class="contact_arch"></div>
+
+        <div class="contact_content">
+          <p class="contact_headline">CONTACT</p>
+          <div class="icons">
+            <a
+              href="https://www.instagram.com/momo_0ll8?igsh=MWh1aGw0bzJhMTBsdg=="
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/share/1Dz9FBA3TU/">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
+<form id="form" class="hidden" action="https://docs.google.com/forms/d/e/1FAIpQLSfJivJE45ib4U2EzmqXhu7-9p2RHx8nMRzOEFSofqFAerAfuQ/formResponse">
+  <div>
+    <label>名前</label>
+    <input type="text" class="text" name="entry.134569595"/>
+  </div>
+
+  <div>
+    <label>メッセージ</label>
+    <textarea name="entry.2118838199" ></textarea>
+  </div>
+
+  <button type="submit" class="submit">
+    送信する <i class="fa-solid fa-envelope"></i>
+  </button>
+</form>
+
+          <button class="message_btn">send massege　<i class="fa-solid fa-envelope"></i></button>
+        </div>
       </div>
     </div>
     <script src="main.js"></script>
