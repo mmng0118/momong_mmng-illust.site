@@ -99,9 +99,10 @@
           <div class="cards_track">
             <div
               class="card"
-              data-src="images/kuromu.jpg"
-              data-date="2026/6/5"
+              data-src="images/kuromu.jpg"             
               data-tags="#タイムラプス,#二次創作"
+              data-desc="ぶいすぽっ！所属の夜乃くろむさんを描きました！"
+              data-video="videos/kuromu_video.mp4"
             >
               <img class="card-illust" src="images/kuromu.jpg" />
               <div class="captions">
@@ -109,9 +110,10 @@
             </div>
             <div
               class="card"
-              data-src="images/uduki.jpg"
-              data-date="2026/6/5"
+              data-src="images/uduki.jpg"             
               data-tags="#タイムラプス,#二次創作"
+              data-desc="にじさんじ所属の卯月コウさんを描きました！"
+              data-video="videos/uduki_video.mp4"
             >
               <img class="card-illust" src="images/uduki.jpg" />
               <div class="captions">
@@ -121,7 +123,8 @@
               class="card"
               data-src="images/milan1.jpg"
               data-date="2026/6/5"
-              data-tags="#タイムラプス,#二次創作"
+              data-tags="#二次創作"
+              data-desc="にじさんじ所属のミラン・ケストレルさんを描きました！"
             >
               <img class="card-illust" src="images/milan1.jpg" />
               <div class="captions">
@@ -129,9 +132,9 @@
             </div>
             <div
               class="card"
-              data-src="images/kenmochi.jpg"
-              data-date="2026/6/5"
+              data-src="images/kenmochi.jpg"            
               data-tags="#タイムラプス,#二次創作"
+              data-desc="にじさんじ所属の剣持刀也さんを描きました！"
             >
               <img class="card-illust" src="images/kenmochi.jpg" />
               <div class="captions">
@@ -143,9 +146,11 @@
           <div class="cards_track">
             <div
               class="card"
-              data-src="images/original.jpg"
-              data-date="2026/6/5"
-              data-tags="#タイムラプス,#二次創作"
+              data-src="images/original.jpg"              
+              data-tags="#タイムラプス,#オリジナル"
+              data-desc="さわやかな雰囲気のオリジナルイラストです♪"
+              data-video="videos/original_video.mp4"
+
             >
               <img class="card-illust" src="images/original.jpg" />
               <div class="captions">
@@ -154,19 +159,21 @@
 
             <div
               class="card"
-              data-src="images/milan2.jpg"
-              data-date="2026/6/5"
+              data-src="images/milan2.jpg"              
               data-tags="#タイムラプス,#二次創作"
+              data-desc="にじさんじ所属のミラン・ケストレルさんを描きました！"
             >
               <img class="card-illust" src="images/milan2.jpg" />
               <div class="captions">
               </div>
             </div>
             <div class="card"               
-            data-src="images/kagami.jpg"
-              data-date="2026/6/5"
+              data-src="images/kagami.jpg"            
               data-tags="#タイムラプス,#二次創作"
->
+              data-desc="にじさんじ所属の加賀美ハヤトさんを描きました！"
+              data-video="videos/uduki_video.mp4"
+
+              >
               <img class="card-illust" src="images/kagami.jpg"/>
               <div class="captions">
               </div>
@@ -179,21 +186,23 @@
           </div>
         </div>
       </div>
+      <!--ページ番号-->
+      <p class="page_number">02</p>
+    </div>
       <!-- モーダル -->
       <div class="modal" id="modal">
         <div class="modal_inner">
           <button class="modal_close" id="modalClose">✕</button>
           <div class="modal_content">
             <img class="modal_img" id="modalImg" src="" alt="" />
-            <p class="modal_date" id="modalDate"></p>
-            <p class="modal_desc" id="modalDesc"></p>
             <div class="modal_tags" id="modalTags"></div>
+            <p class="modal_desc" id="modalDesc"></p>
+            <button class="modal_video_btn" id="modalVideoBtn"><span>タイムラプスを見る</span></button>
+            <video class="modal_video" id="modalVideo" controls></video>
+            <button class="modal_video_close_btn" id="modalVideoCloseBtn"><span>タイムラプスを閉じる</span></button>
           </div>
         </div>
       </div>
-      <!--ページ番号-->
-      <p class="page_number">02</p>
-    </div>
 
     <!--３ページ目 Me-------------------------------------------------------------------->
     <div id="about" class="about about_me">
@@ -386,17 +395,17 @@
           </div>
 <form id="form" class="hidden" action="https://docs.google.com/forms/d/e/1FAIpQLSfJivJE45ib4U2EzmqXhu7-9p2RHx8nMRzOEFSofqFAerAfuQ/formResponse">
   <div>
-    <label>名前</label>
+    <label>name</label>
     <input type="text" class="text" name="entry.134569595"/>
   </div>
 
   <div>
-    <label>メッセージ</label>
+    <label>massege</label>
     <textarea name="entry.2118838199" ></textarea>
   </div>
 
   <button type="submit" class="submit">
-    送信する <i class="fa-solid fa-envelope"></i>
+    submit <i class="fa-solid fa-envelope"></i>
   </button>
 </form>
 

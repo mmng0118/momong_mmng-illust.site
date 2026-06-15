@@ -13,7 +13,6 @@
   --coral: #e67d5f;
   --gray: #797676;
   --blue: #4575ba;
-  
 }
 body {
   font-family: "Inter", sans-serif;
@@ -22,7 +21,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
 }
 
 /* ─── ページコンテナ ─────────────────────────────── */
@@ -353,8 +351,9 @@ body {
 }
 /*----モーダル-------------------------------------*/
 .modal {
+  font-family: "メイリオ";
   display: none;
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgba(30, 60, 100, 0.55);
   backdrop-filter: blur(4px);
@@ -362,6 +361,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   padding-top: 40px;
+  overflow-y: auto;
 }
 .modal.open {
   display: flex;
@@ -371,30 +371,28 @@ body {
   border-radius: 12px;
   padding: 24px 20px;
   width: 320px;
+  max-height: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
 .modal_close {
-  top: 10px;
+  position: absolute;
+  top: 5px;
   right: 14px;
   background: none;
   border: none;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 800;
   cursor: pointer;
 }
 .modal_content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-top: 10%;
-  gap: 10px;
-}
-.modal_date {
-  font-size: 13px;
-  color: white;
-  font-weight: 700;
 }
 .modal_img {
   width: 100%;
@@ -404,22 +402,71 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 .modal_tags {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 20px;
 }
 .modal_tag {
-  font-size: 12px;
+  font-size: 13px;
   color: white;
   font-weight: 700;
 }
-.modal_desc {
+.modal_video {
+  display: none;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+.modal_video_btn,
+.modal_video_close_btn {
+  margin-top: 15px;
+  width: 60%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 50px;
+  background: white;
+  color: var(--blue);
   font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.modal_video_btn:hover,
+.modal_video_close_btn:hover {
+  transform: scale(1.08);
+  background: var(--blue);
   color: white;
-  line-height: 1.6;
+}
+
+/* 押した瞬間 */
+.modal_video_btn:active,
+.modal_video_close_btn:active {
+  transform: scale(0.5);
+}
+
+/* 消えるアニメ */
+.modal_video_btn.hide,
+.modal_video_close_btn.hide {
+  transform: scale(0.3);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal_video_close_btn {
+  display: none;
+}
+.modal_desc {
+  margin-top: 15px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  line-height: 1.7;
 }
 /*－－about Meエリアーーーーーーーーーーーーーーー*/
 .about {
+  font-family: "メイリオ";
   position: relative;
   width: 390px;
   height: auto;
@@ -823,7 +870,9 @@ body {
 .contact i {
   color: white;
 }
-.message_btn{
+.submit,
+.message_btn {
+  font-family: "メイリオ";
   font-size: 15px;
   font-weight: 700;
   color: #323232;
@@ -833,41 +882,78 @@ body {
   border-radius: 50px;
   background: var(--yellow);
   cursor: pointer;
-}
-.message_btn i{
-  color:#323232;
-}
-.hidden{
-  display: none;
-}
-form{
- width: 250px;
- display: flex;
- flex-direction: column;
- gap: 10px;
- margin-top: -20px;
- margin-bottom: 30px;
+  transition: transform 0.2s ease;
 }
 
-form div{
-  display:flex;
+/* ホバーでボタン拡大 */
+.submit:hover,
+.message_btn:hover {
+  transform: scale(1.08);
+}
+
+/* アイコンの基本設定 */
+.submit:hover,
+.message_btn i {
+  color: #323232;
+  display: inline-block; /* ← これ重要（アニメさせるため） */
+}
+
+/* ホバー時にアイコン振動 */
+.submit:hover i,
+.message_btn:hover i {
+  animation: shake 0.6s linear;
+}
+
+/* 振動アニメーション */
+@keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(2px, 0px) rotate(-10deg);
+  }
+  50% {
+    transform: translate(-2px, 0px) rotate(10deg);
+  }
+  75% {
+    transform: translate(2px, 0px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+.hidden {
+  display: none;
+}
+form {
+  font-family: "メイリオ";
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+
+form div {
+  display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-form label{
+form label {
   font-size: 14px;
   color: white;
-  margin-right:10px;
+  margin-right: 10px;
 }
-form span{
+form span {
   color: white;
   background: var(--coral);
   padding: 2px;
-  font-size:10px;
-  border-radius: 3px;;
+  font-size: 10px;
+  border-radius: 3px;
 }
-.submit{
+.submit {
   font-size: 15px;
   font-weight: 700;
   color: #323232;
@@ -879,6 +965,7 @@ form span{
   background: var(--yellow);
   cursor: pointer;
 }
-.submit i{
+.submit i {
   color: #323232;
+  margin-left: 5px;
 }

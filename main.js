@@ -12,17 +12,18 @@ window.addEventListener("scroll", () => {
 const modal = document.getElementById("modal");
 const modalClose = document.getElementById("modalClose");
 const modalImg = document.getElementById("modalImg");
-const modalDate = document.getElementById("modalDate");
 const modalTags = document.getElementById("modalTags");
+const modalDesc = document.getElementById("modalDesc");
+const modalVideo = document.getElementById("modalVideo");
+const modalVideoBtn = document.getElementById("modalVideoBtn");
+const modalVideoCloseBtn = document.getElementById("modalVideoCloseBtn");
 
 document.querySelectorAll(".card").forEach((card) => {
-  const date = card.dataset.date || "";
   const tags = card.dataset.tags ? card.dataset.tags.split(",") : [];
   const captions = card.querySelector(".captions");
 
   if (captions) {
     captions.innerHTML = `
-  <p class="caption caption--date">${date}</p>
   <div class="caption--tags">
     ${tags.map((t) => `<span class="caption">${t.trim()}</span>`).join("")}
   </div>
@@ -32,24 +33,68 @@ document.querySelectorAll(".card").forEach((card) => {
   // モーダル開く
   card.addEventListener("click", () => {
     const src = card.dataset.src || "";
+    const desc = card.dataset.desc || "";
+    const video = card.dataset.video || "";
+    modalVideo.style.display = "none";
+    modalVideoBtn.style.display = "block";
 
     modalImg.src = src;
-    modalDate.textContent = "制作日　" + date;
+    modalDesc.textContent = desc;
+
     modalTags.innerHTML = tags
       .map((t) => `<span class="modal_tag">${t.trim()}</span>`)
       .join("");
 
+    if (video) {
+      modalVideo.src = video;
+      modalVideo.style.display = "none";
+      modalVideoBtn.style.display = "block";
+    } else {
+      modalVideo.style.display = "none";
+      modalVideoBtn.style.display = "none";
+    }
+
     modal.classList.add("open");
+    document.body.style.overflow = "hidden";
   });
 });
+//タイムラプス表示
+modalVideoBtn.addEventListener("click", () => {
+  modalVideoBtn.style.display = "none";
+  modalVideo.style.display = "block";
+});
+modalVideo.pause();
+modalVideo.currentTime = 0;
+modalVideo.style.display = "none";
+modalVideoBtn.style.display = "block";
 
 modalClose.addEventListener("click", () => {
   modal.classList.remove("open");
+  document.body.style.overflow = "";
 });
 
 modal.addEventListener("click", (e) => {
-  if (e.target === modal) modal.classList.remove("open");
+  if (e.target === modal) {
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+  }
 });
+
+modalVideoBtn.addEventListener("click", () => {
+  modalVideoBtn.style.display = "none";
+  modalVideo.style.display = "block";
+  modalVideoCloseBtn.style.display = "block";
+});
+
+modalVideoCloseBtn.addEventListener("click", () => {
+  modalVideo.pause();
+  modalVideo.currentTime = 0;
+
+  modalVideo.style.display = "none";
+  modalVideoBtn.style.display = "block";
+  modalVideoCloseBtn.style.display = "none";
+});
+
 //ABOUT--------------------------------------------------------------------------
 const Qbox = document.querySelectorAll(".Qbox");
 Qbox.forEach((Qbox) => {
