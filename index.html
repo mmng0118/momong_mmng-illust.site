@@ -25,6 +25,9 @@
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
   })(document);
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
     <!--1ページ目----------------------------------->
@@ -40,17 +43,10 @@
           <source src="videos/original_video.mp4" type="video/mp4" />
         </video>
       </div>
-      <!-- ハンバーガーメニュー 
-      <button class="nav-mini">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    -->
       <!-- タイトル -->
       <header class="title">
         <div class="title__bar"></div>
-        <div class="title__text">
+        <div class="title__text inter">
           <p class="title__momong">momong</p>
           <p class="title__illustration">illustration</p>
         </div>
@@ -62,7 +58,7 @@
       </div>
 
       <!-- ナビゲーション -->
-      <nav class="nav">
+      <nav class="nav inter-light">
         <ul>
           <li class="nav__item"><a href="#">TOP</a></li>
           <li class="nav__item"><a href="#works">WORKS</a></li>
@@ -82,13 +78,13 @@
       </div>
 
       <!-- ページ番号 -->
-      <p class="page_number">01</p>
+      <p class="page_number inter">01</p>
     </div>
 
     <!--２ページ目----------------------------------->
     <div id="works" class="works">
       <!--見出し-->
-      <div class="headline">
+      <div class="headline inter">
         <div class="headline_bar"></div>
         <p class="headline_text">WORKS</p>
       </div>
@@ -187,7 +183,7 @@
         </div>
       </div>
       <!--ページ番号-->
-      <p class="page_number">02</p>
+      <p class="page_number inter inter">02</p>
     </div>
       <!-- モーダル -->
       <div class="modal" id="modal">
@@ -208,7 +204,7 @@
     <div id="about" class="about about_me">
       <div class="paper_content">
         <!--見出し-->
-        <div class="headline">
+        <div class="headline inter">
           <div class="headline_bar"></div>
           <p class="headline_text">ABOUT</p>
         </div>
@@ -216,14 +212,14 @@
         <div class="toggle-me-works">
           <div class="knob"></div>
 
-          <button class="meBtn">ME</button>
-          <button class="worksBtn">WORKS</button>
+          <button class="meBtn inter">ME</button>
+          <button class="worksBtn inter">WORKS</button>
         </div>        
 <!--質問コーナー-->
         <div class="QA_container">
           <div class="QAbox">
             <button class="Qbox">
-              <span class="question"><span class="q_label">Q</span>　いつからイラストを描いているの？</span>
+              <span class="question"><span class="q_label">Q</span>　いつから描いているの？</span>
               <span class="icon">＋</span>
             </button>
             <div class="Abox">
@@ -241,7 +237,7 @@
             <div class="Abox">
               <span class="answer"
                 ><span class="a_label">A</span>
-                <span class="answer_text">ibisPaintというアプリを使っています。透明水彩を使っていた時期もあります。</span>
+                <span class="answer_text">ibisPaintというアプリを使っています。コピックや透明水彩という画材を使っていた時期もあります。</span>
               
             </div>
           </div>
@@ -262,18 +258,18 @@
             </button>
             <div class="Abox">
               <span class="answer"><span class="a_label">A</span>
-              <span class="answer_text">背景を書き込めるようになることです！</span>
+              <span class="answer_text">背景を書き込めるようになることです！<br>いつかイラストを投稿してみたいです♪</span>
             </div>
           </div>
         </div>
       </div>
-      <p class="page_number">03</p>
+      <p class="page_number inter">03</p>
     </div>
     <!--３ページ目 Works---------------------------->
     <div class="about about_works">
       <div class="paper_content">
         <!--見出し-->
-        <div class="headline">
+        <div class="headline inter">
           <div class="headline_bar"></div>
           <p class="headline_text">ABOUT</p>
         </div>
@@ -281,8 +277,8 @@
           <div class="toggle-me-works">
           <div class="knob"></div>
 
-          <button class="meBtn">ME</button>
-          <button class="worksBtn">WORKS</button>
+          <button class="meBtn inter">ME</button>
+          <button class="worksBtn inter">WORKS</button>
         </div>        
 
         <!--質問コーナー-->
@@ -321,7 +317,7 @@
               <span class="answer"
                 ><span class="a_label">A</span>
                 <span class="answer_text">男性キャラクターのイラストが得意です。
-                <br />また、髪の毛や金属を塗ることも得意な方です。
+                <br />また、髪の毛や金属を塗ることも得意です。
               </span>
             </div>
           </div>
@@ -347,13 +343,12 @@
               <span class="answer"
                 ><span class="a_label">A</span>
                 <span class="answer_text">デジタルイラストを描き始めたばかりのころの作品が残っています。
-                <br />この頃は小さな絵を描くのに数時間かかっていました。
               </span>
             </div>
           </div>
         </div>
       </div>
-      <p class="page_number">03</p>
+      <p class="page_number inter">03</p>
     </div>
     <!--canvasエリア-------------------------------->
     <div class="footer">
@@ -382,7 +377,7 @@
         <div class="contact_arch"></div>
 
         <div class="contact_content">
-          <p class="contact_headline">CONTACT</p>
+          <p class="contact_headline inter">CONTACT</p>
           <div class="icons">
             <a
               href="https://www.instagram.com/momo_0ll8?igsh=MWh1aGw0bzJhMTBsdg=="

@@ -35,8 +35,6 @@ document.querySelectorAll(".card").forEach((card) => {
     const src = card.dataset.src || "";
     const desc = card.dataset.desc || "";
     const video = card.dataset.video || "";
-    modalVideo.style.display = "none";
-    modalVideoBtn.style.display = "block";
 
     modalImg.src = src;
     modalDesc.textContent = desc;
@@ -46,12 +44,17 @@ document.querySelectorAll(".card").forEach((card) => {
       .join("");
 
     if (video) {
+      // 動画あり
       modalVideo.src = video;
       modalVideo.style.display = "none";
       modalVideoBtn.style.display = "block";
+      modalVideoCloseBtn.style.display = "none";
     } else {
+      // 動画なし
+      modalVideo.src = "";
       modalVideo.style.display = "none";
       modalVideoBtn.style.display = "none";
+      modalVideoCloseBtn.style.display = "none";
     }
 
     modal.classList.add("open");
@@ -59,18 +62,13 @@ document.querySelectorAll(".card").forEach((card) => {
   });
 });
 //タイムラプス表示
-modalVideoBtn.addEventListener("click", () => {
-  modalVideoBtn.style.display = "none";
-  modalVideo.style.display = "block";
-});
-modalVideo.pause();
-modalVideo.currentTime = 0;
-modalVideo.style.display = "none";
-modalVideoBtn.style.display = "block";
 
 modalClose.addEventListener("click", () => {
   modal.classList.remove("open");
   document.body.style.overflow = "";
+
+  modalVideo.pause();
+  modalVideo.currentTime = 0;
 });
 
 modal.addEventListener("click", (e) => {
@@ -84,11 +82,13 @@ modalVideoBtn.addEventListener("click", () => {
   modalVideoBtn.style.display = "none";
   modalVideo.style.display = "block";
   modalVideoCloseBtn.style.display = "block";
+  modalVideo.play();
 });
 
 modalVideoCloseBtn.addEventListener("click", () => {
   modalVideo.pause();
   modalVideo.currentTime = 0;
+  modalVideo.load();
 
   modalVideo.style.display = "none";
   modalVideoBtn.style.display = "block";
@@ -252,6 +252,5 @@ form.addEventListener("submit", (e) => {
     body: formData,
   });
 
-  alert("送信しました！");
   form.reset();
 });
